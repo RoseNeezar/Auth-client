@@ -1,4 +1,4 @@
-import { DefaultTheme } from "styled-components/native";
+import { DefaultTheme } from "styled-components";
 import { LightTheme, DarkTheme } from "./../themes";
 
 type ThemeL = typeof LightTheme;

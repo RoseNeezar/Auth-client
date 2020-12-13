@@ -1,13 +1,11 @@
-import styled from "styled-components/native";
-import Hoverable from "../app/utils/hover/Hoverable";
+import styled from "styled-components";
 import { observer } from "mobx-react-lite";
-import Layout from "../app/features/layout/Layout";
 import { lightStore } from "../app/store/lightStore";
 
 interface IStyle {
   ishover?: boolean;
 }
-const LayoutIndex = styled.View`
+const LayoutIndex = styled.div`
   background-color: ${({ theme }) => theme.color3};
   height: 100vh;
   display: flex;
@@ -15,7 +13,7 @@ const LayoutIndex = styled.View`
   justify-content: center;
 `;
 
-const Text = styled.Text`
+const Text = styled.div`
   font-size: 1.6rem;
   background-color: ${(props: IStyle) => (props.ishover ? "purple" : "#39f")};
   cursor: pointer;
@@ -25,21 +23,11 @@ const Text = styled.Text`
 const index = () => {
   const { openLight, setOpenLight } = lightStore;
   return (
-    <Layout>
-      <LayoutIndex>
-        <Hoverable>
-          {(hover: boolean) => (
-            <Text
-              ishover={hover ? true : undefined}
-              onPress={() => setOpenLight(!openLight)}
-            >
-              Hello World
-            </Text>
-          )}
-        </Hoverable>
-        {openLight && <Text>BUKAK siniiiiii</Text>}
-      </LayoutIndex>
-    </Layout>
+    <LayoutIndex>
+      <Text onClick={() => setOpenLight(!openLight)}>Hello World</Text>
+
+      {openLight && <Text>BUKAK siniiiiii</Text>}
+    </LayoutIndex>
   );
 };
 export default observer(index);
