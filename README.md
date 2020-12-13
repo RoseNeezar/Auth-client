@@ -1,3 +1,3 @@
 # My nextjs starter
 
-### nextjs + typescript + styled-components + react-native-web
+## nextjs + typescript + styled-components 
