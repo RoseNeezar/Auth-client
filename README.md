@@ -1,3 +1,3 @@
-# My nextjs starter
+# Auth client
 
-## nextjs + typescript + styled-components 
+## jwt token passport
